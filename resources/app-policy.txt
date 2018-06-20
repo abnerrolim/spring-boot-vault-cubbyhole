@@ -1,0 +1,7 @@
+path "sys/health" {
+  capabilities = ["read"]
+}
+
+path "app/*" {
+  capabilities = ["create", "update", "delete", "read"]
+}

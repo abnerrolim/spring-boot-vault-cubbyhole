@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.abner.rolim</groupId>
+    <artifactId>spring-boot-vault-cubbyhole</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>spring-boot-vault-cubbyhole</name>
+
+    <properties>
+        <project.build.encoding>UTF-8</project.build.encoding>
+        <project.build.java>1.8</project.build.java>
+        <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
+        <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
+        <spring.cloud.version>Edgware.RELEASE</spring.cloud.version>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.10.RELEASE </version>
+    </parent>
+
+    <dependencies>
+        
+        <dependency>
+            <groupId>org.springframework.vault</groupId>
+            <artifactId>spring-vault-core</artifactId>
+            <version>1.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+<!-- Fim -->
+    </dependencies>
+
+    <build>
+        <finalName>spring-boot-vault-cubbyhole</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>${project.build.java}</source>
+                    <target>${project.build.java}</target>
+                    <encoding>${project.build.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+ 
