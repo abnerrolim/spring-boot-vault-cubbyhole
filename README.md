@@ -10,6 +10,9 @@ The advantage is if this machine was hacked and env variables were exposed, only
 
 The drawback is if for any reason, the lifecycle of token fails, like refresh or unwrap, the application can't recover because it does not have credentials to re-login. So all flow need to be remade, the deployer needs to authenticate, wraps a token, and so on.
 
+### Cubby Hole Auth Flow Abstraction
+![Auth Flow](resources/vault_cubbyhole_flow.png?raw=true "Title")
+
 ## Dependencies
 * Docker
 * Docker compose
